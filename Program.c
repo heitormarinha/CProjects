@@ -1,4 +1,4 @@
-//This Program does a DNS resolver, a ports scans and Denieal of service
+//This Program does a DNS resolver, a ports scans and Denial of service
 
 #include <stdio.h>//uses to get input.
 #include <netdb.h>//uses to work with socket.
@@ -7,7 +7,7 @@
 #include <unistd.h>// uses to close the socket.
 
 
-// Rosolves DNS.
+// Resolves DNS.
 void DNSResolver(char *target)
 {
     struct hostent *targetDomain = gethostbyname(target);
@@ -62,7 +62,7 @@ void DenialOfService(char *target,  int port)
     {
    
         connectMySocket = connect(mySocket, (struct sockaddr *)&targetSocket, sizeof targetSocket);
-        printf("The service is soffering DoS");
+        printf("The service is suffering DoS");
 
     }
 
@@ -72,7 +72,7 @@ void main (void)
 {
    char target;
    int input;
-   printf ("type 1 to DNS resolver, 2 to prot scan and 3 to DoNS atack ");
+   printf ("type 1 to DNS resolver, 2 to prot scan and 3 to DoNS attack ");
    scanf("%i",&input);
 
    
@@ -86,12 +86,12 @@ void main (void)
             break;
        
         case 2:
-            printf("Type a target - eg: IP adress.");
+            printf("Type a target - eg: IP address.");
             scanf("%s",&target);
             PortScan(&target);
             break;
         case 3:
-            printf("Type a target  - eg: IP adress.");
+            printf("Type a target  - eg: IP address.");
             scanf("%s",&target);
             printf("Type a port- eg: IP 8080");
             int port = scanf("%i",&port);
