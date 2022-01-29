@@ -1,17 +1,15 @@
-#include <stdio.h>  // uses to work with input/output
- /* print Fahrenheit-Celsius table  for fahr = 0, 20, ... , 300 */  
+#include <stdio.h>  // uses to work with input/output.
+//Symbolic constant representation area.
+#define LOWER 0 /* lower limit of table*/  
+#define UPPER 300 /* upper limit*/  
+#define STEP 20
+ /* print Fahrenheit-Celsius table  for Fahrenheit = 0, 20, ... , 300 */
  main()  
-{  
-    int fahr, celsius; 
-    int lower, upper, step;  
-    lower= 0;  upper= 300;  
-    step= 20;  fahr = lower;  
-    /* lower limit of temperature table*/ 
-    /* upper limit*/  /* step size*/  
-    while (fahr <= upper) 
-    {  
-        celsius = 5 * (fahr-32) / 9;  
-        printf("%d\t%d\n", fahr, celsius);  
-        fahr = fahr + step;  
-    }
-}
+ {  
+     int Fahrenheit;  
+     //Convert each value of Fahrenheit to Celsius.
+     for (Fahrenheit = LOWER; Fahrenheit <= UPPER; Fahrenheit = Fahrenheit + STEP)
+     {
+        printf("%3d %6.1f\n", Fahrenheit, (5.0/9.0)*(Fahrenheit-32)); 
+     } 
+ }
