@@ -57,6 +57,7 @@
         "wix.vscode-import-cost",
         "dsznajder.es7-react-js-snippets",
         "ecmel.vscode-html-css",
-        "zhuangtongfa.material-theme"
+        "zhuangtongfa.material-theme",
+        "austin.code-gnu-global"
     ]
 }
